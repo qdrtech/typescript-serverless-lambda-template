@@ -12,8 +12,11 @@ describe('tests managing hello lambda handler', () => {
         helloHandler = await x as {statusCode:number, body:string};
     });
 
-    it("hello should return statusCode:200", async () => {
+    it("hello should return statusCode:200", () => {
         expect(helloHandler.statusCode).toBe(200);
+    });
+
+    it("hello should reutrn response of type string", () => {
         expect(typeof helloHandler.body).toBe("string");
-    })
+    });
 });
