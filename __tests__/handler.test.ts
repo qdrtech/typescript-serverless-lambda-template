@@ -1,13 +1,14 @@
-import { hello } from "../build/src/handler";
-import { APIGatewayEvent, Context } from 'aws-lambda';
+import { APIGatewayProxyEvent, Context } from 'aws-lambda';
+import { hello } from '../src/handler';
 
 describe('tests managing hello lambda handler', () => {
-    const event = { body: 'Test Event' } as APIGatewayEvent;
+    const event = { body: 'Test Event' } as APIGatewayProxyEvent;
     const context = {} as Context;
+    const callback:any = {};
     let helloHandler:any;
 
     beforeAll(async () => {
-        const x:Promise<any> = hello(event, context);
+        const x = hello(event, context, callback);
         helloHandler = await x;
     })
 
