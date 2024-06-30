@@ -1,0 +1,8 @@
+# mac_crap
+.DS_STORE
+
+# node_modules
+node_modules
+
+# serverless files
+.serverless
