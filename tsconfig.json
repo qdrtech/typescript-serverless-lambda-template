@@ -2,14 +2,16 @@
   "compilerOptions": {
     "target": "es2022",
     "module": "node16",
-    "lib": ["ES2022"],
+    "lib": [
+      "ES2022"
+    ],
     "moduleResolution": "node16",
     "rootDir": ".",
     "outDir": "./build",
-    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "alwaysStrict": true,
     "sourceMap": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -20,5 +22,8 @@
     "strictNullChecks": false,
     "removeComments": true,
   },
-  "include": ["src/**/*", "__tests__/**/*"]
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ],
 }
