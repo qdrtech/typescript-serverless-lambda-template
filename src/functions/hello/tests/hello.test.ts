@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent, Callback, Context } from 'aws-lambda';
-import hello from '../src/handler';
+import hello from '../handler';
 
 describe('tests managing hello lambda handler', () => {
     const event = { body: 'Test Event' } as APIGatewayProxyEvent;

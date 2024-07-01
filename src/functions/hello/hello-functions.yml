@@ -1,0 +1,6 @@
+hello:
+    handler: ./build/src/handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
