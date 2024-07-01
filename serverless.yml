@@ -1,12 +1,20 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: qdrtech
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: typescript-serverless-template
 # "service" is the name of this project. This will also be added to your AWS resource names.
 service: typescript-serverless-template
+
+# Create an optimized package for the functions
+package:
+  individually: true
 
 provider:
   name: aws
   runtime: nodejs20.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
 
 functions:
-  hello:
-    handler: handler.hello
+  - ${file(./src/functions/hello/hello-functions.yml)}
+  
